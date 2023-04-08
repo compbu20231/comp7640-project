@@ -4,4 +4,4 @@
 2.  Download the source code
 3.  Open command prompt
 4.  Swicth to project directory
-5.  type `docker compose up -d`
+5.  Type `docker compose up -d`
