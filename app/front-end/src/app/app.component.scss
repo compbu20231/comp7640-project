@@ -1,0 +1,18 @@
+.navBarOpen {
+    @media screen and (min-width: 767px) and (max-width: 1440px)
+    {
+        transform: translateX(200px);
+    }
+}
+
+.container {
+    transition: all .5s ease-in-out;
+    min-height: 85vh;
+}
+
+
+
+.img-banner {
+    max-height: 80px;
+}
+

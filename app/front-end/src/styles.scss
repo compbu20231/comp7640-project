@@ -1,0 +1,186 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    font-family: Microsoft JhengHei;
+}
+
+body {
+    font-family: Microsoft JhengHei;
+}
+
+$color-blue: darken(rgb(175,218,249), 20);
+$color-green: rgb(177, 209, 58);
+$color-default: rgb(127, 211, 157);
+$color-purple: rgb(204, 151, 206);
+$color-orange: rgb(242, 159, 28);
+
+.text-small{
+    font-size: .8rem !important;
+}
+
+.content {
+
+    font-size: 1.1rem;
+    
+}
+
+.img-cake {
+    width: 22px;
+    padding-bottom: 3px;
+}
+
+.title-3 {
+    font-size: 1rem;
+}
+
+.bg-blue {
+    background-color: $color-blue;
+}
+
+.bg-green {
+    background-color: $color-green;
+}
+
+.bg-default {
+    background-color: $color-default;
+}
+
+.bg-purple {
+    background-color: $color-purple;
+}
+
+.bg-orange {
+    background-color: $color-orange
+}
+.title-1 {
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.title-2 {
+    font-weight: bold;
+    border-radius: .25rem .25rem 0 0;
+    font-size: 1rem;
+    a {
+        color: white;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.img-figure {
+    margin: 0 3px;
+    text-align: center;
+    border-bottom-right-radius: 8px;
+    background-color: #78d1cd;
+}
+
+.img-link {
+    color: #20726d;
+    text-decoration: underline;
+    word-break: break-word;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.img-card {
+    transform: translate3d(-5px, -5px, 0);
+    width: 100% !important;
+    height: 100% !important;
+    transition: all 0.22s;
+    border-bottom-right-radius: 8px;
+    @media screen and (max-width: 767px)
+    {
+        transform: translate3d(-3px, -3px, 0);
+    }
+    &:hover {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+.card-h {
+    font-size: 1.3rem;
+    @media screen and (max-width: 767px)
+    {
+        font-size: 1rem;
+    }
+}
+
+.status-text {
+    font-size: 1rem;
+}
+
+
+.card-body-bg {
+    background: #F4F8F8 url('./assets/images/cs/bg.png');
+    background-size: cover;
+    background-position-x: center;
+}
+
+.img-logo {
+    max-width: 150px;
+    @media screen and (min-width: 767px)
+    {
+        max-width: 200px;
+    }
+    
+}
+
+.img-title {
+    @media screen and (min-width: 767px)
+    {
+        max-width: 600px;
+    }
+}
+
+.img-chapter {
+    @media screen and (min-width: 767px)
+    {
+        max-width: 350px;
+    }
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+@media screen and (min-width: 767px)
+{
+    .shift-0 {
+        margin-left: 0px;
+    }
+    .shift-1 {
+        margin-left: 20px;
+    }
+    .shift-2 {
+        margin-left: 40px;
+    }
+    .shift-3 {
+        margin-left: 60px;
+    }
+
+    .p-md-2 {
+        padding: 0.5rem !important;
+    }
+}
+
+.p-relative {
+    position: relative;
+}
+
+
+
+.p-check {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 3;
+}

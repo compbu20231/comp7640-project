@@ -1,0 +1,150 @@
+$color-green: #f3fbe5;
+$color-yellow: rgb(114,110,36);
+$color-blue: #0062a0;
+
+.side-nav .collapsible a {
+    font-size: 1rem;
+}
+
+.text-yellow {
+    
+    color: $color-yellow;
+}
+
+.text-blue {
+    
+    color: $color-blue;
+}
+
+
+.subText {
+    height: 76px !important;
+    padding-right: 5px;
+}
+
+.title1{
+    font-size: 1.5rem;
+}
+
+.title2{
+    font-size: 1.1rem;
+}
+
+#sidenav-overlay {
+
+    background-color: rgba(0,0,0,0);
+
+    @media only screen and (max-width: 1440px)
+    {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 997;
+        height: 120vh;
+        background-color: rgba(0,0,0,.5);
+        will-change: opacity;
+    }
+}
+.side-nav.fixed {
+    transition: .5s ease-in-out;
+}
+.sideOpen{
+    transform: translateX(0);
+}
+
+.sideClose{
+    transform: translateX(-100%);
+}
+
+.item-cake {
+    margin-right: 5px;
+    margin-left: -5px;
+}
+
+.item-bs {
+    width: 20px;
+    height: 22px;
+}
+
+@media only screen and (min-width: 1584px)
+{
+    .t-header {
+        transform: translateX(240px);
+    }
+}
+
+.img-header {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+
+    @media only screen and (min-width: 1584px)
+    {
+        transform: translateX(100px);
+    }
+}
+.rgba-blue-strong, .rgba-blue-strong:after {
+    background-color: rgba($color-green,  .7);
+}
+
+.transparent {
+    opacity: 0;
+}
+
+.mlNavbar {
+    @media screen and (min-width: 767px) and (max-width: 1584px)
+    {
+        margin-left: 230px;
+    }
+}
+
+.div-home{
+    @media screen and (min-width: 767px)
+    {
+        min-width: 300px;
+        text-align: right;
+    }
+}
+
+.mr-m-auto{
+    @media screen and (max-width: 767px)
+    {
+        margin-right: auto !important;
+    }
+}
+
+nav div {
+    transition: .5s ease-in-out;
+}
+
+.hideDesktop {
+    @media only screen and (min-width: 1584px)
+    {
+        display: none;
+    }
+}
+
+.img-logo {
+    max-width: 500px;
+}
+
+header {
+    background-color: white;
+}
+
+.h-text {
+    font-size: 1rem;
+    @media screen and (min-width: 767px)
+    {
+        font-size: 1.2rem;
+    }
+}
+
+.m-y {
+    @media screen and (min-width: 767px)
+    {
+        margin: 0 auto;
+        padding: 5px 10px;
+    }
+}

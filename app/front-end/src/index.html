@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CS Video for handling passengers with Dementia</title>
+  <script type='text/javascript'>
+    var base = window.location.href.substring(0, window.location.href.toLowerCase().indexOf('index.html'));
+    document.write('<base href="' + base + '" />');
+  </script>
+  <script src="./assets/js/SCORM_API_wrapper.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/css/mdb.css">
+  <style>
+    body {
+      background: #F4F8F8 url('./assets/images/background.jpg') repeat;
+    }
+  </style>
+</head>
+
+<body onunload="exit();">
+  <app-root></app-root>
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="./assets/js/mdb.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55890067-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    new WOW().init();
+    var scorm = pipwerks.SCORM;
+    function exit() {
+      scorm.save();
+    }
+
+
+  </script>
+</body>
+
+</html>

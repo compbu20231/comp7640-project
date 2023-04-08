@@ -1,0 +1,70 @@
+<div>
+
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary text-capitalize" (click)="showAllShops()">
+            <i class="fas fa-search"></i>
+            show all shops
+        </button>
+        <button type="button" class="btn btn-primary text-capitalize" (click)="showAddShop()">
+            <i class="fas fa-store"></i>
+            add a new shop to the database
+        </button>
+    </div>
+
+    <div class="mt-3" *ngIf="isDisplay">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Shop Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of shops">
+                    <th scope="row">{{s.shop_id}}</th>
+                    <td>{{s.name}}</td>
+                    <td>{{s.rating}}</td>
+                    <td>{{s.location}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="mt-3" *ngIf="isAdd">
+
+        <div class="row">
+            <div class="col-md-7">
+                <div class="md-form md-outline mb-0">
+                    <input type="text" id="form-shop-name" class="form-control" [(ngModel)]="inputShop.name">
+                    <label for="form-shop-name">Shop Name</label>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="md-form md-outline mb-0">
+                    <input type="text" id="form-location" class="form-control" [(ngModel)]="inputShop.location">
+                    <label for="form-location">Location</label>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="md-form md-outline mb-0">
+                    <input type="number" step="0.1" id="form-rating" class="form-control"
+                        [(ngModel)]="inputShop.rating">
+                    <label for="form-rating">Rating</label>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" [disabled]="!inputShop.name || !inputShop.location || !inputShop.rating"
+            class="btn btn-info btn-sm ml-0" (click)="addShop()">
+            Submit to DB
+            <i class="far fa-paper-plane ml-2"></i>
+        </button>
+
+    </div>
+
+
+
+</div>

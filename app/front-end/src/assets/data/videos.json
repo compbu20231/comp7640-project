@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "chp" : "第一集: ",
+        "title": "認識腦退化症",
+        "path": "./assets/videos/video1.mp4",
+        "image" : "./assets/images/cs/v1.png"
+    },
+    {
+        "id": 2,
+        "chp": "第二集: ",
+        "title": "辨識身份, 建立關係",
+        "path": "./assets/videos/video2.mp4",
+        "image" : "./assets/images/cs/v2.png"
+    },
+    {
+        "id": 3,
+        "chp": "第三集: ",
+        "title": "體諒情緒, 聆聽了解",
+        "path": "./assets/videos/video3.mp4",
+        "image" : "./assets/images/cs/v3.png"
+    },
+    {
+        "id": 4,
+        "chp": "第四集: ",
+        "title": "尋求幫助",
+        "path": "./assets/videos/video4.mp4",
+        "image" : "./assets/images/cs/v4.png"
+    }
+    
+]
+
+

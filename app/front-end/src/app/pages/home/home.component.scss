@@ -1,0 +1,194 @@
+$color-blue-1: rgb(112, 147, 210);
+$color-green-1: rgb(35, 173, 170);
+$color-green-2: rgb(177, 209, 58);
+$color-green-3: rgb(146, 208, 80);
+$color-green-4: rgb(0, 137, 23);
+$color-green-5: rgb(13, 103, 28);
+$color-green-6: rgb(8, 62, 17);
+$color-yellow-1: rgb(185, 179, 58);
+$color-orange-1: rgb(244, 136, 70);
+$color-orange-2: rgb(245, 181, 77);
+
+.ripple {
+    text-align: center;
+}
+
+.img-iconshop {
+    width: 250px;
+    height: 250px;
+}
+
+.bg-green-4 {
+    background-color: $color-green-4;
+}
+
+.bg-green-5 {
+    background-color: $color-green-5;
+}
+
+.bg-green-6 {
+    background-color: $color-green-6;
+}
+
+.title-2 {
+    font-size: 1rem;
+
+    @media (min-width: 768px) {
+        font-size: 1.1rem;
+    }
+}
+
+.h120 {
+    min-height: 120px;
+}
+
+.bs-figure {
+    margin: 0;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+}
+
+.bs-div {
+    transform: translate3d(0, 0, 0);
+
+    &:hover {
+        transform: translate3d(-5px, -5px, 0);
+    }
+}
+
+
+.img-icon {
+    height: 70px;
+}
+
+
+
+
+.bg-orange-1 {
+    background-color: $color-orange-1;
+}
+
+.bg-orange-2 {
+    background-color: $color-orange-2;
+}
+
+.bg-d-orange-2 {
+    background-color: darken($color-orange-2, 5);
+}
+
+.bg-green {
+    background-color: $color-green-1;
+}
+
+.bg-green2 {
+    background-color: $color-green-2;
+}
+
+.bg-green3 {
+    background-color: $color-green-3;
+}
+
+.bg-d-green-3 {
+    background-color: darken($color-green-3, 5);
+}
+
+.carousel-indicators li {
+    background-color: #333;
+}
+
+.bg-yellow {
+    background-color: $color-yellow-1;
+}
+
+.path-image {
+    @media (min-width: 576px) {
+        max-width: 750px;
+    }
+}
+
+.book-img {
+    @media (min-width: 768px) {
+        max-width: 120px;
+    }
+}
+
+.row>.col,
+.row>[class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+
+.img-banner {
+    max-height: 100px;
+}
+
+.y-block {
+    background-color: #c5bf47;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+}
+
+.hotline,
+.mobile {
+    font-size: 1rem;
+}
+
+.break-word {
+    /* Warning: Needed for oldIE support, but words are broken up letter-by-letter */
+    -ms-word-break: break-all;
+    word-break: break-all;
+    /* Non standard for webkit */
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+
+
+.course-block {
+    background-color: #f3f2d9;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+
+.remarks {
+    font-weight: bold;
+    font-style: italic;
+    font-size: .8rem;
+}
+
+.img-course {
+    height: 155px;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.description {
+    font-style: italic;
+    font-size: .8rem;
+    font-weight: 600;
+    color: rgb(68, 100, 129)
+}
+
+.contact {
+    background-color: rgb(226, 240, 217);
+    padding: 10px;
+}
+
+#cards-row {
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+
+.blackText {
+    color: black !important;
+}

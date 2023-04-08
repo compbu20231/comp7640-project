@@ -1,0 +1,100 @@
+<div>
+
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary text-capitalize" (click)="showAllShops()">
+            <i class="fas fa-search"></i>
+            show all items of a shop
+        </button>
+        <button type="button" class="btn btn-primary text-capitalize" (click)="showAddItems()">
+            <i class="fas fa-store"></i>
+            add a new item to the shop
+        </button>
+    </div>
+
+    <div class="mt-3">
+
+        <label class="mdb-main-label active label-select" [hidden]="!isDisplay && !isAdd">
+            Select the shop - {{currentShop && currentShop.name}}
+        </label>
+        <div class="row" [hidden]="!isDisplay && !isAdd">
+            <div class="col-md-4">
+                <select name="selectedValue" class="mdb-select md-form" [(ngModel)]="currentShop"
+                    searchable="Select the shop.." (change)="checkShop();">
+                    <option disabled selected>
+                        Choose Shop
+                    </option>
+                    <option [ngValue]="s" *ngFor="let s of shops">
+                        shop id: {{s.shop_id}} - shop: name: {{s.name}}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+
+        <table [hidden]="!currentShop || !isDisplay" class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Item Id</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of items">
+                    <th scope="row">{{i.item_id}}</th>
+                    <td>{{i.name}}</td>
+                    <td>{{i.price}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="mt-3" *ngIf="isAdd && currentShop">
+
+        <div class="row">
+            <div class="col-md-7">
+                <div class="md-form md-outline mb-0">
+                    <input type="text" id="form-shop-name" class="form-control" [(ngModel)]="inputItem.name">
+                    <label for="form-shop-name">Item Name</label>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="md-form md-outline mb-0">
+                    <input type="number" step="0.1" id="form-location" class="form-control"
+                        [(ngModel)]="inputItem.price">
+                    <label for="form-location">Price</label>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="md-form md-outline mb-0">
+                    <input type="text" id="form-keyword1" class="form-control" [(ngModel)]="inputItem.kw1">
+                    <label for="form-keyword1">Keyword 1</label>
+                </div>
+            </div>
+            <div class="col-md-7" *ngIf="inputItem.kw1">
+                <div class="md-form md-outline mb-0">
+                    <input type="text" id="form-keyword3" class="form-control" [(ngModel)]="inputItem.kw2">
+                    <label for="form-keyword2">Keyword 2</label>
+                </div>
+            </div>
+            <div class="col-md-7" *ngIf="inputItem.kw1 && inputItem.kw2">
+                <div class="md-form md-outline mb-0">
+                    <input type="text" id="form-keyword2" class="form-control" [(ngModel)]="inputItem.kw3">
+                    <label for="form-keyword3">Keyword 3</label>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" [disabled]="!inputItem.name || !inputItem.price" class="btn btn-info btn-sm ml-0"
+            (click)="addItem()">
+            Submit to DB
+            <i class="far fa-paper-plane ml-2"></i>
+        </button>
+
+
+    </div>
+
+
+
+</div>

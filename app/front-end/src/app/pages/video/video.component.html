@@ -1,0 +1,102 @@
+<div class="content">
+
+  <!-- <img src="./assets/images/banner_cover.png" class="img-fluid mb-2 img-banner" alt=""> -->
+  <!-- <img src="./assets/images/banner.png" class="img-fluid mb-5" alt=""> -->
+  <div class="card mt-2 card-h">
+    
+
+    <div class="card-body p-3 card-body-bg">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="bg-white p-2 rounded mb-2">
+          <a class="button-collapse black-text" (click)="openSideNav($event);">
+            <i class="fas fa-bars"></i> 課程目錄
+          </a>
+        </div>
+      </div>
+      
+
+      <div class="video-box">
+        <div class="alert-box" *ngIf="isEnded">
+          <div class="alert-box-inner">
+            <div *ngIf="isCompleted">
+              本網上課程已經全部播放完畢，感謝您的支持。
+              您現在可以關閉瀏覽器離開此頁面。
+            </div>
+            <div *ngIf="!isCompleted">
+              本章節已播放完畢, 請按
+              <button type="button" class="btn btn-outline-success btn-rounded"
+                (click)="loadNext()">
+                下一頁
+              </button>
+              繼續
+            </div>
+          </div>
+
+        </div>
+
+        <video width="100%" height="auto" controlsList="nodownload" autoplay
+          controls (ended)="vidEnded()" (seeking)="vidSeeking(vid)"
+          (timeupdate)="vidUpdate(vid)" #vid>
+          <source [src]="link" type="video/mp4">
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+
+      </div>
+
+      <div class="row justify-content-between align-items-end">
+        <div class="h4 col-md-8 mb-5">
+          <!-- <div>
+            <i class="fab fa-youtube"></i> {{video?.chp}} {{video?.title}}
+            <i class="fas fa-check text-success" *ngIf="isViewed"></i>
+          </div> -->
+          <div>
+            <span class="p-relative">
+              <img [src]="video?.image" class="img-fluid img-chapter" alt="">
+              <i class="fas fa-check text-success p-check" *ngIf="isViewed"></i>
+            </span>
+            
+          </div>
+          <div class="mt-3">
+            <button class="btn btn-success btn-rounded"
+            (click)="reload();">
+            <i class="fas fa-redo-alt"></i>
+            Reload Video
+          </button>
+          </div>
+          
+        </div>
+
+        <div class="d-md-flex justify-content-end align-items-center text-right col-md-4">
+          <div class="mr-2 my-2">
+            <img src="./assets/images/cs/c2.png" class="img-fluid img-logo" alt="">
+          </div>
+          <div>
+            <img src="./assets/images/cs/c1.png" class="img-fluid img-logo" alt="">
+          </div>
+        </div>
+        <!-- <div class="col-md-4">
+          <div class="d-md-block d-none text-right">
+            <div>
+              <img src="./assets/images/cs/c1.png" class="img-fluid img-logo" alt="">
+            </div>
+            <div>
+              <img src="./assets/images/cs/c2.png" class="img-fluid img-logo" alt="">
+            </div>
+          </div>
+        </div> -->
+     
+        
+        <!-- <div class="col-md-12 h5 font-weight-bold">
+          觀看影片後,請按上方藍色的學習發展部橫額返回課程目錄
+        </div> -->
+      </div>
+
+
+    
+    
+
+    </div>
+
+  </div>
+
+</div>
