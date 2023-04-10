@@ -24,7 +24,7 @@
             <tbody>
                 <tr *ngFor="let s of shops">
                     <th scope="row">{{s.shop_id}}</th>
-                    <td>{{s.name}}</td>
+                    <td>{{s.sname}}</td>
                     <td>{{s.rating}}</td>
                     <td>{{s.location}}</td>
                 </tr>
@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="md-form md-outline mb-0">
-                    <input type="text" id="form-shop-name" class="form-control" [(ngModel)]="inputShop.name">
+                    <input type="text" id="form-shop-name" class="form-control" [(ngModel)]="inputShop.sname">
                     <label for="form-shop-name">Shop Name</label>
                 </div>
             </div>
@@ -57,7 +57,7 @@
             </div>
         </div>
 
-        <button type="button" [disabled]="!inputShop.name || !inputShop.location || !inputShop.rating"
+        <button type="button" [disabled]="!inputShop.sname || !inputShop.location || !inputShop.rating"
             class="btn btn-info btn-sm ml-0" (click)="addShop()">
             Submit to DB
             <i class="far fa-paper-plane ml-2"></i>

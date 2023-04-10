@@ -13,8 +13,14 @@ services:
       context: ./app
       dockerfile: Dockerfile
     container_name: myapp
-    volumes:
-      - ./app/src:/app/src
+    environment:
+      host: mydb
+      user: root
+      password: password
+      database: retaildatabase
+      port: 3306
+    # volumes:
+    #   - ./app/src:/app/src
     ports:
       - "5000:5000"
     depends_on:
@@ -28,10 +34,6 @@ services:
     container_name: mypma
     links:
       - db
-    environment:
-      PMA_HOST: db
-      PMA_PORT: 3306
-      PMA_ARBITRARY: 1
     restart: always
     ports:
       - 8081:80

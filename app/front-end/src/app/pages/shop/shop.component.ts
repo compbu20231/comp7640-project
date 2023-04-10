@@ -25,7 +25,7 @@ export class ShopComponent implements OnInit {
     this.initShop();
   }
   initShop() {
-    this.inputShop = { name: '', rating: '', location: '' };
+    this.inputShop = { sname: '', rating: '', location: '' };
   }
 
   showAllShops() {

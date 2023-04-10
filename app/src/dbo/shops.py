@@ -18,7 +18,7 @@ class Shop(Resource):
         for shop in result:
             shops.append({
                 "shop_id": shop[0],
-                "name": shop[1],
+                "sname": shop[1],
                 "rating": shop[2],
                 "location": shop[3]
             })
@@ -40,19 +40,19 @@ class Shop(Resource):
 
     def post(self):
         data = request.get_json()
-        name = data["name"]
+        sname = data["sname"]
         rating = data["rating"]
         location = data["location"]
-        cursor.execute("INSERT INTO shops (name, rating, location) VALUES (%s, %s, %s)", (name, rating, location))
+        cursor.execute("INSERT INTO shops (sname, rating, location) VALUES (%s, %s, %s)", (sname, rating, location))
         db.commit()
         return jsonify({"message": "Shop added successfully"})
 
     def put(self, shop_id):
         data = request.get_json()
-        name = data["name"]
+        sname = data["sname"]
         rating = data["rating"]
         location = data["location"]
-        cursor.execute("UPDATE shops SET name=%s, rating=%s, location=%s WHERE shop_id=%s", (name, rating, location, shop_id))
+        cursor.execute("UPDATE shops SET sname=%s, rating=%s, location=%s WHERE shop_id=%s", (sname, rating, location, shop_id))
         db.commit()
         return jsonify({"message": "Shop updated successfully"})
 

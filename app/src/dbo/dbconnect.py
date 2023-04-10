@@ -1,13 +1,14 @@
 import mysql.connector
 import time
+import os
 
 def connectDB():
     db = mysql.connector.connect(
-    host="mydb",
-    user="root",
-    password="password",
-    database="retaildatabase",
-    port="3306")
+    host=os.environ["host"],
+    user=os.environ["user"],
+    password=os.environ["password"],
+    database=os.environ["database"],
+    port=os.environ["port"])
     return db
 
 while True:

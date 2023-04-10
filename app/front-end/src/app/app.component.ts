@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { NavbarService } from "./services/navbar.service";
-import { Router, NavigationEnd } from "@angular/router";
-import { ScormService } from "./services/scorm.service";
+import { Router } from "@angular/router";
 // tslint:disable-next-line: ban-types
 declare let gtag: Function;
 
@@ -10,24 +9,10 @@ declare let gtag: Function;
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent {
   title = "Comp7640-Project";
-  isOpen: boolean;
-
   constructor(
-    private nbService: NavbarService,
-    private router: Router
   ) {
-    // const visitor = ua('UA-55890067-1', { http: true });
-  }
-
-  ngOnInit() {
-    this.nbService.navbarStatusChanged.subscribe(
-      (isOpen) => (this.isOpen = isOpen)
-    );
-  }
-
-  ngOnDestroy(): void {
 
   }
 }

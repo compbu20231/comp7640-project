@@ -43,7 +43,7 @@ export class OrderComponent implements OnInit {
   }
 
   initShop() {
-    this.currentCustomer = { name: '', rating: '', location: '', shop_id: '' };
+    this.currentCustomer = { cid: '', telephone: '', address: '' };
   }
   initItem() {
     this.inputItem = { name: '', price: '', kw1: '', kw2: '', kw3: '', shop_id: '' };
@@ -94,8 +94,8 @@ export class OrderComponent implements OnInit {
 
   showCancelItems() {
     this.isDisplay = false;
-    this.isAdd = true;
-    this.isCancel = false;
+    this.isAdd = false;
+    this.isCancel = true;
     this.loadAllOrders();
   }
 

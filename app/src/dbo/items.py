@@ -19,7 +19,7 @@ class Item(Resource):
                    select * from items where item_id in (
                    select i.item_id from items i left outer join item_keywords ik
                    on i.item_id = ik.item_id
-                   where i.name = "{item_name}" or ik.keyword = "{item_name}")
+                   where i.iname = "{item_name}" or ik.keyword = "{item_name}")
                   '''.format(item_name = kw)
         else:
             sql = "SELECT * FROM items order by item_id desc"
@@ -29,7 +29,7 @@ class Item(Resource):
         for item in result:
             items.append({
                 "item_id": item[0],
-                "name": item[1],
+                "iname": item[1],
                 "price": item[2],
                 "shop_id": item[3]
             })
@@ -39,7 +39,7 @@ class Item(Resource):
 
     def post(self):
         data = request.get_json()
-        name = data["name"]
+        iname = data["iname"]
         price = data["price"]
         shop_id = data["shop_id"]
         kw1 = data["kw1"]
@@ -47,7 +47,7 @@ class Item(Resource):
         kw3 = data["kw3"]
         message = ''
         try:
-            cursor.execute("INSERT INTO items (name, price, shop_id) VALUES (%s, %s, %s)", (name, price, shop_id))
+            cursor.execute("INSERT INTO items (iname, price, shop_id) VALUES (%s, %s, %s)", (iname, price, shop_id))
             item_id = cursor.lastrowid
             if kw1:
                 cursor.execute("INSERT INTO item_keywords (item_id, keyword) VALUES (%s, %s)", (item_id, kw1))
@@ -65,12 +65,12 @@ class Item(Resource):
     def put(self, item_id):
         print('item_id', item_id)
         data = request.get_json()
-        name = data["name"]
+        iname = data["iname"]
         price = data["price"]
         shop_id = data["shop_id"]
         message = ''
         try:
-            cursor.execute("UPDATE items SET name=%s, price=%s, shop_id=%s WHERE item_id=%s", (name, price, shop_id, str(item_id)))
+            cursor.execute("UPDATE items SET iname=%s, price=%s, shop_id=%s WHERE item_id=%s", (iname, price, shop_id, str(item_id)))
             db.commit()
             message = "Item updated successfully"
         except Exception as e:

@@ -26,11 +26,6 @@ export class NavbarService {
     this.httpClient.get('./assets/data/url.json').toPromise().then((url: any) => {
       this.baseUrl = url.baseUrl;
     });
-
-    this.httpClient.get('./assets/data/videos.json').toPromise().then((videos: any) => {
-      this.videos = videos;
-      this.videosChanged.next(videos);
-    });
   }
 
 
@@ -60,10 +55,7 @@ export class NavbarService {
   }
 
   changeVideosSatus() {
-    this.httpClient.get('./assets/data/videos.json').toPromise().then((videos: any) => {
-      this.videos = videos;
-      this.videosChanged.next(videos);
-    });
+
   }
 
   changeModalStatus(isOpenModal: boolean) {
@@ -81,16 +73,6 @@ export class NavbarService {
 
   goTo(route: string) {
     this.router.navigate([route]);
-  }
-
-  async getVideoById(id): Promise<any> {
-    return new Promise<any>((resolve, reject) => {
-      this.httpClient.get('./assets/data/videos.json')
-        .toPromise().then((vi: any[]) => {
-          resolve(vi.find(v2 => v2.id === id));
-        })
-        .catch((e) => reject(e.message));
-    });
   }
 
 

@@ -30,10 +30,10 @@ export class ItemComponent implements OnInit {
     $('.select-wrapper').css("margin-top", 0);
   }
   initShop() {
-    this.currentShop = { name: '', rating: '', location: '', shop_id: '' };
+    this.currentShop = { sname: '', rating: '', location: '', shop_id: '' };
   }
   initItem() {
-    this.inputItem = { name: '', price: '', kw1: '', kw2: '', kw3: '', shop_id: '' };
+    this.inputItem = { iname: '', price: '', kw1: '', kw2: '', kw3: '', shop_id: '' };
   }
 
   checkShop() {
