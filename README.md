@@ -8,12 +8,12 @@
 - Open command prompt
 - Switch to project directory
 - Type `docker compose up -d`
-- Open browser, type `http://localhost:5000` to acess the GUI
-- Open browser, type `http://localhost:8081` to run phpmyadmin to check the DB. user = root, password = password
+- Open browser, type http://localhost:5000 to acess the GUI
+- Open browser, type http://localhost:8081 to run phpmyadmin to check the DB. user = root, password = password
 
 ## Step-03: Run Required Functionalities:
 
-- In browser under `http://localhost:5000`, click button under Shop management, you can
+- In browser under http://localhost:5000 , click button under Shop management, you can
     1) show all shops
     2) add a new shop to the database.
 
