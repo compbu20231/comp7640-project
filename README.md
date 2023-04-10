@@ -9,7 +9,8 @@
 - Switch to project directory
 - Type `docker compose up -d`
 - Open browser, type http://localhost:5000 to acess the GUI
-- Open browser, type http://localhost:8081 to run phpmyadmin to check the DB. `user = root, password = password`
+- Open browser, type http://localhost:8081 to run phpmyadmin to check the DB. 
+  `user = root, password = password`
 
 ## Step-03: Run Required Functionalities:
 
