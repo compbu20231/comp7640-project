@@ -28,5 +28,5 @@
 
 ## Step-04: Verified Required Functionalities:
 
-- In browser under `http://localhost:8081`, Login phpmyadmin to verify the data is correctly modified.
+- In browser under http://localhost:8081 , Login phpmyadmin to verify the data is correctly modified.
 
