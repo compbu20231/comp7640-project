@@ -35,8 +35,6 @@ class Item(Resource):
             })
         return jsonify(items)
 
-
-
     def post(self):
         data = request.get_json()
         iname = data["iname"]
@@ -61,23 +59,3 @@ class Item(Resource):
             db.rollback()
             message = str(e)
         return jsonify({"message": message})
-
-    def put(self, item_id):
-        print('item_id', item_id)
-        data = request.get_json()
-        iname = data["iname"]
-        price = data["price"]
-        shop_id = data["shop_id"]
-        message = ''
-        try:
-            cursor.execute("UPDATE items SET iname=%s, price=%s, shop_id=%s WHERE item_id=%s", (iname, price, shop_id, str(item_id)))
-            db.commit()
-            message = "Item updated successfully"
-        except Exception as e:
-            message = str(e)
-        return jsonify({"message": message})
-
-    def delete(self, item_id):
-        cursor.execute("DELETE FROM items WHERE item_id=" + str(item_id))
-        db.commit()
-        return jsonify({"message": "Item deleted successfully"})

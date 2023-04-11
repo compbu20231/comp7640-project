@@ -46,17 +46,3 @@ class Shop(Resource):
         cursor.execute("INSERT INTO shops (sname, rating, location) VALUES (%s, %s, %s)", (sname, rating, location))
         db.commit()
         return jsonify({"message": "Shop added successfully"})
-
-    def put(self, shop_id):
-        data = request.get_json()
-        sname = data["sname"]
-        rating = data["rating"]
-        location = data["location"]
-        cursor.execute("UPDATE shops SET sname=%s, rating=%s, location=%s WHERE shop_id=%s", (sname, rating, location, shop_id))
-        db.commit()
-        return jsonify({"message": "Shop updated successfully"})
-
-    def delete(self, shop_id):
-        cursor.execute("DELETE FROM shops WHERE shop_id=" + str(shop_id))
-        db.commit()
-        return jsonify({"message": "Shop deleted successfully"})
