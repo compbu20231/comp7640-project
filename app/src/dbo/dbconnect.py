@@ -4,7 +4,7 @@ import os
 
 def connectDB():
     db = mysql.connector.connect(
-    host=os.environ["host"],
+    host=os.environ["dbhost"],
     user=os.environ["user"],
     password=os.environ["password"],
     database=os.environ["database"],

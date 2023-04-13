@@ -1,0 +1,62 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: retail-app
+spec:
+  selector:
+    app: retail-app
+  type: LoadBalancer
+  ports:
+    - name: app
+      protocol: TCP
+      port: 80
+      targetPort: 5000
+    - name: pma
+      protocol: TCP
+      port: 81
+      targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: retail-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: retail-app
+  template:
+    metadata:
+      labels:
+        app: retail-app
+    spec:
+      containers:
+        - name: retail-app-container
+          image: eddie0228/retail-app:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          # resources:
+          #   limits:
+          #     memory: "528Mi"
+          #     cpu: "1500m"
+          env:
+            - name: dbhost
+              value: "retail-db.default"
+            - name: apphost
+              value: "0.0.0.0"
+            - name: user
+              value: root
+            - name: password
+              value: password
+            - name: database
+              value: retaildatabase
+            - name: port
+              value: "3306"
+        - name: retail-phpmyadmin-container
+          image: phpmyadmin/phpmyadmin
+          ports:
+            - containerPort: 80
+          env:
+            - name: PMA_HOST
+              value: "retail-db.default"

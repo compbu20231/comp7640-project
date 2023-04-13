@@ -14,7 +14,8 @@ services:
       dockerfile: Dockerfile
     container_name: myapp
     environment:
-      host: mydb
+      dbhost: mydb
+      apphost: app
       user: root
       password: password
       database: retaildatabase

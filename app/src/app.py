@@ -5,6 +5,7 @@ from dbo.orders import Order
 from dbo.items import Item
 from dbo.shops import Shop
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -25,4 +26,4 @@ def backToHome():
     return redirect("/")
 
 if __name__ == "__main__":
-    app.run(debug=True, use_reloader=True, port=5000, host="app")
+    app.run(debug=True, use_reloader=True, port=5000, host=os.environ["apphost"])

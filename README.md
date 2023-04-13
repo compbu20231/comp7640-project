@@ -3,6 +3,8 @@
 ## Step-01: Preparation
 - Install Docker
 - Unzip the source code folder
+- Demo App Link: http://comp7640.ddns.net
+- Demo PhpMyAdmin Link: http://comp7640.ddns.net:81
 
 ## Step-02: Run the code in local PC
 - Open command prompt
